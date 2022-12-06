@@ -68,25 +68,25 @@ let clicker = 0;
 console.log(indexImages[clicker])
     prevButtonElement.addEventListener ('click', function() {
 
-    indexImages[clicker].classList.remove(active);
+    indexImages[clicker].classList.remove('active');
     clicker--;
 
     if(clicker < 0) {
         clicker = indexImages.length -1;
     }
 
-    indexImages[clicker].classList.add(active);
+    indexImages[clicker].classList.add('active');
 
 });
 
 nextButtonElement.addEventListener ('click', function() {
-    indexImages[clicker].classList.remove(active);
+    indexImages[clicker].classList.remove('active');
     clicker++;
     
     if(clicker > indexImages.length -1){
         clicker =0;
     }
 
-    indexImages[clicker].classList.add(active);
+    indexImages[clicker].classList.add('active');
 });
 

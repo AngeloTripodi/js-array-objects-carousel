@@ -29,8 +29,8 @@ const images = [
  const indexImages = [];
 
 const newCarousel = document.querySelector('div.carousel-image.position-relative');
-const beforeButton = document.querySelector('div.button.previous');
-const beforeButton = document.querySelector('div.button.next');
+const prevButtonElement = document.querySelector('div.button.previous');
+const nextButtonElement = document.querySelector('div.button.next');
 
 
 //!!  const carousel = images.map((img, index) =>{
@@ -62,4 +62,13 @@ for ( let i=0; i<images.length; i++){
 }
 console.log(indexImages)
 
-const 
+let clicker = 0;
+prevButtonElement.addEventListener ('click', function() {
+clicker += clicker--;
+});
+
+nextButtonElement.addEventListener ('click', function() {
+clicker += clicker++;
+});
+
+console.log(clicker)

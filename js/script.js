@@ -50,10 +50,10 @@ for ( let i=0; i<images.length; i++){
     const imageElement = images[i].image;
     console.log(imageElement)
     const carousel = document.createElement('div');
+    carousel.classList.add('my_carousel-item');
+
     carousel.innerHTML = `
-                 <div class="my_carousel-item">
-                    <img src="${imageElement}" alt="First image">
-                 </div>
+        <img src="${imageElement}" alt="First image">
     `;
 
     newCarousel.prepend(carousel);
@@ -62,13 +62,31 @@ for ( let i=0; i<images.length; i++){
 }
 console.log(indexImages)
 
+
 let clicker = 0;
-prevButtonElement.addEventListener ('click', function() {
-clicker += clicker--;
+
+console.log(indexImages[clicker])
+    prevButtonElement.addEventListener ('click', function() {
+
+    indexImages[clicker].classList.remove(active);
+    clicker--;
+
+    if(clicker < 0) {
+        clicker = indexImages.length -1;
+    }
+
+    indexImages[clicker].classList.add(active);
+
 });
 
 nextButtonElement.addEventListener ('click', function() {
-clicker += clicker++;
+    indexImages[clicker].classList.remove(active);
+    clicker++;
+    
+    if(clicker > indexImages.length -1){
+        clicker =0;
+    }
+
+    indexImages[clicker].classList.add(active);
 });
 
-console.log(clicker)

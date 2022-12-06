@@ -28,40 +28,38 @@ const images = [
 
  const indexImages = [];
 
-const carouselElement = document.querySelectorAll('my_carousel-item');
-const newCarousel = document.getElementById('carousel');
+const newCarousel = document.querySelector('div.carousel-image.position-relative');
+const beforeButton = document.querySelector('div.button.previous');
+const beforeButton = document.querySelector('div.button.next');
 
-// console.log(newCarousel)
 
+//!!  const carousel = images.map((img, index) =>{
+//     indexImages.push(index);
 
-// newCarousel.innerHTML= `
-//             <div class="my_carousel-item active">
-//                 <img src="./img/01.webp" alt="First image">
-//             </div>
-// `;
-
- const carousel = images.map((img, index) =>{
-    indexImages.push(index);
-    return img.image;
+//     return img.image;
     
-});
+// });
 
 
-console.log(carousel);
+// console.log(carousel);
+// console.log(indexImages)
+
+
+
+for ( let i=0; i<images.length; i++){
+    const imageElement = images[i].image;
+    console.log(imageElement)
+    const carousel = document.createElement('div');
+    carousel.innerHTML = `
+                 <div class="my_carousel-item">
+                    <img src="${imageElement}" alt="First image">
+                 </div>
+    `;
+
+    newCarousel.prepend(carousel);
+    indexImages.push(i);
+
+}
 console.log(indexImages)
 
-// for ( let i=0; i<images.length; i++){
-//     const imageElement = images[i];
-//     const carousel = document.createElement('div');
-//     carousel.innerHTML = `
-//                  <div class="my_carousel-item">
-//                     <img src="${imageElement}" alt="First image">
-//                  </div>
-//     `;
-
-//     newCarousel.appendChild(carousel);
-//     indexImages.push(images[i];
-
-// }
-
-// console.log(indexImages)
+const 

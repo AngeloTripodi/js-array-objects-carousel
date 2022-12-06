@@ -57,7 +57,7 @@ for ( let i=0; i<images.length; i++){
     `;
 
     newCarousel.prepend(carousel);
-    indexImages.push(imageElement);
+    indexImages.push(carousel);
 
 }
 console.log(indexImages)
